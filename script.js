@@ -132,6 +132,7 @@
         setTimeout(() => {
             emptylp.style.display = 'none';
             prodSection.style.display = "grid";
+            prodSection.style.minHeight='217vh'
             renderProducts(sortedData);
         }, 2000)
     })
