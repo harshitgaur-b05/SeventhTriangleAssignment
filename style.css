@@ -12,6 +12,10 @@ body {
 }
 
 /* ============== HERO SECTION ============== */
+
+/*!!!!! as not able to access assets of figma file so i used my images in 2 section one is 
+box -> box with flies was paid  so i used simple box to show empty and another one is skater image 
+ */
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)),
     url('./assets/skatingGirl.avif') no-repeat center center;
