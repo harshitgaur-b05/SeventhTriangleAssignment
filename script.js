@@ -14,7 +14,7 @@ async function FetchData(){
  
     return data;
 }
-const prodSection=document.getElementById('product_showcase')
+
 
 function buildCard({img,title,price}){
     //create elemets
@@ -87,12 +87,27 @@ function buildCard({img,title,price}){
 
     
 }
-    const apiData= await FetchData();
+ const apiData= await FetchData();
+async function renderProducts(){
+    
 apiData.forEach(element => {
     Card(element)
-});
-    const productPanel =document.getElementById('productPannel_h2')
+});}
+const productPanel =document.getElementById('productPannel_h2')
 productPanel.textContent=`${apiData.length+1} Products`
+const emptylp=document.getElementById('empty-space-id')
+const prodSection=document.getElementById('product_showcase')
+const btnld=document.getElementById('load-btn');
+
+btnld.addEventListener('click',(e)=>{
+    e.preventDefault()
+    btnld.innerHTML=`<div class="loader"></div>`
+    setTimeout(()=>{
+        emptylp.style.display='none';
+        prodSection.style.display="grid";
+        renderProducts();
+    },2000)
+})
 
 })
 ()
