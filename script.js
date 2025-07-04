@@ -1,17 +1,31 @@
 // https://interveiw-mock-api.vercel.app/api/getProducts
 
 (async function () {
-   
-    async function FetchData(){
-        const res = await fetch('https://interveiw-mock-api.vercel.app/api/getProducts')
-        const object = await res.json();
-
-        const data = object.data
-        console.log(data[0]);
-     
-        return data;
+   //function made to fetch data from url
+async function FetchData() {
+  try {
+    const res = await fetch('https://interveiw-mock-api.vercel.app/api/getProducts');
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
+    const object = await res.json();
+    if (!object.data) {
+      throw new Error("No data field in API response.");
     }
 
+    const data = object.data;
+    console.log(data[0]);
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    // Optionally return an empty array or null
+    return [];
+  }
+}
+
+    //function for building cards using js 
+    //dom
     function buildCard({img, title, price}){
         //create elemets
         //4 section in card image title price addto cart 
@@ -67,7 +81,7 @@
 
         return card;
     }
-
+    
     //for extracting card details 
     async function Card({product}){
         
@@ -80,12 +94,13 @@
         prodSection.appendChild(card)
     }
 
+    //fetch data function called and data stored in here
     const apiData = await FetchData();
     const selectedSort = document.getElementById('sortSelect')
 
     //sorting logic
     let sortedData = [...apiData]
-    
+    //perfrom sorting operations for select options
     if(selectedSort){
         selectedSort.addEventListener('change', (e) => {
             e.preventDefault();
@@ -113,7 +128,7 @@
             renderProducts(sortedData)
         })
     }
-
+    //to render products whenever we want to help me to render it on sorting also 
     async function renderProducts(dataToRender){
         dataToRender.forEach(element => {
             Card(element)
@@ -121,12 +136,12 @@
     }
 
     const productPanel = document.getElementById('productPannel_h2')
-   
     const emptylp = document.getElementById('empty-space-id')
     const prodSection = document.getElementById('product_showcase')
     const btnld = document.getElementById('load-btn');
      productPanel.textContent = `${apiData.length} Products`
     let loadCLICK=false;
+    //for handeling event occur at load time 
     btnld.addEventListener('click', (e) => {
         e.preventDefault()
         loadCLICK=true
