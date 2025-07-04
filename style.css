@@ -162,9 +162,37 @@ select option{
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
-  animation: fadeIn 0.5s ease forwards;
-  animation-delay: calc(var(--order) * 0.1s);
+  transform: translateY(50px) scale(0.95);
+    animation: cardSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: calc(var(--animation-order) * 0.15s);
 }
+
+/* ANIMATION KEYFRAMES - ADDED */
+@keyframes cardSlideIn {
+    0% {
+        opacity: 0;
+        animation-delay: 900ms;
+        transform: translateY(50px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+.product-card:nth-child(1) { --animation-order: 0; }
+.product-card:nth-child(2) { --animation-order: 1; }
+.product-card:nth-child(3) { --animation-order: 2; }
+.product-card:nth-child(4) { --animation-order: 4; }
+.product-card:nth-child(5) { --animation-order: 5; }
+.product-card:nth-child(6) { --animation-order: 6; }
+.product-card:nth-child(7) { --animation-order:8; }
+.product-card:nth-child(8) { --animation-order: 9; }
+.product-card:nth-child(9) { --animation-order: 10; }
+.product-card:nth-child(10) { --animation-order: 12; }
+.product-card:nth-child(11) { --animation-order: 13; }
+.product-card:nth-child(12) { --animation-order: 14; }
 
 .product-card:hover {
   transform: translateY(-5px);
@@ -379,14 +407,4 @@ select option{
   }
 }
 
-/* Animation for cards */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+

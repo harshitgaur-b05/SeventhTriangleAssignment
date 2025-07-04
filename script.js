@@ -19,7 +19,6 @@ async function FetchData() {
     return data;
   } catch (error) {
     console.error("Error fetching products:", error);
-    // Optionally return an empty array or null
     return [];
   }
 }
