@@ -88,6 +88,7 @@ select{
 .loader {
   width: 60px;
   aspect-ratio: 2;
+  border-radius: 100%;
   --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
   background: 
     var(--_g) 0%   50%,
@@ -222,3 +223,5 @@ select{
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(51, 65, 85, 0.3);
 }
+
+
