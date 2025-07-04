@@ -1,0 +1,102 @@
+// https://interveiw-mock-api.vercel.app/api/getProducts
+
+
+(async function () {
+    
+    
+async function FetchData(){
+    const res=await fetch('https://interveiw-mock-api.vercel.app/api/getProducts')
+    const object =await res.json();
+
+    const data=object.data
+    console.log(data[0]);
+ 
+    return data;
+}
+const prodSection=document.getElementById('product_showcase')
+
+function buildCard({img,title,price}){
+    //create elemets
+    //4 section in card image title price addto cart 
+    const card = document.createElement('div');
+    const imageSection = document.createElement('div');
+    const image=document.createElement('img');
+    card.className = 'product-card';
+    imageSection.className = 'image-section';
+    // 1. Image section
+    image.setAttribute('src',img);
+    image.setAttribute('class','image_part')
+    imageSection.appendChild(image)
+    
+    
+    // 2. Title section
+    const titleSection = document.createElement('section');
+     const titleElement = document.createElement('h3');
+    titleSection.className = 'title-section';
+    titleElement.textContent = title;
+    titleSection.appendChild(titleElement);
+    // 3. Price section
+    const priceSection = document.createElement('section');
+    priceSection.className = 'price-section';
+
+    const priceElement = document.createElement('p');
+    priceElement.textContent = 'Rs.  '+price;
+
+    priceSection.appendChild(priceElement);
+
+    // 4. Add to cart section
+    const addToCartSection = document.createElement('section');
+    addToCartSection.className = 'add_to_cart_section';
+
+    const addToCartButton = document.createElement('button');
+    addToCartButton.textContent = 'ADD TO CART';
+
+
+    // Add hover effect
+    addToCartButton.addEventListener('mouseenter', () => {
+        addToCartButton.style.background = '#1e293b';
+    });
+
+    addToCartButton.addEventListener('mouseleave', () => {
+        addToCartButton.style.background = '#334155';
+    });
+
+    addToCartSection.appendChild(addToCartButton);
+
+    // Assemble the card
+    card.appendChild(imageSection);
+    card.appendChild(titleSection);
+    card.appendChild(priceSection);
+    card.appendChild(addToCartSection);
+
+    return card;
+}
+//for extracting card details 
+ async function Card({product}){
+    
+    const {title,image,variants}=product
+    const prodImg=image.src;
+    const price=variants[0].price
+    console.log(title,price,
+        prodImg
+    );
+
+   const card =  buildCard({ img: prodImg, title, price });
+    prodSection.appendChild(card)
+
+    
+}
+const apiData= await FetchData();
+// console.log(apiData);
+
+Card(apiData[0]);
+Card(apiData[0]);
+Card(apiData[0]);
+Card(apiData[0]);
+Card(apiData[0]);
+Card(apiData[0]);
+})
+()
+
+
+ 

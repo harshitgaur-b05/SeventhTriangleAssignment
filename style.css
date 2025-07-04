@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hero {
+  /* background: url('your-image.jpg') center/cover no-repeat; */
+    background-color: aqua;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 40vh;
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  margin: 0;
+}
+.productPannel{
+    display: flex;
+    justify-content: space-between;
+    margin: 3% 5%;
+    align-items: center;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.2vw; 
+    height: 5vh;
+    padding-top: 2%;
+    padding-bottom: 2%;  
+    
+}
+select{
+    padding: 1% 9% 1% 1%; 
+    width: 20%;  
+    border-radius: 6px;
+  
+  border: 1px solid #ccc;
+  color: #555;
+  background-color: #fff;
+  font-size: 1vw;
+}
+.products{
+   width: 100vw;
+    min-height: 217vh;
+    /* background: pink; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0vw; /* Increase gap between cards */
+    justify-content: center;
+    padding: 0vw 5vw;
+
+}
+.product-card{
+        width: 26vw;
+        background: white;
+        height: 95vh;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        margin: 0% 3%;
+        
+}
+.image-section {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    height: 71%;
+   
+}
+
+.image_part {
+       
+ object-fit: con;
+    height: 100%;
+    width: 100%;
+    
+}
+/*title section */
+.title-section{
+   text-align:start;
+    margin-bottom: 8px;
+   
+}
+.title-section h3 {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+      font-family: 'Montserrat', sans-serif;
+    font-size: 4vh;
+        font-weight: 300;
+        color: #333;
+        margin: 0;
+}
+.price-section{
+     text-align: start;
+        margin-bottom: 16px;
+}
+.price-section p{
+    text-align: start;
+         font-size: 1.8rem;
+        padding-top: 1rem;
+         font-family: 'Montserrat', sans-serif;
+         font-weight:700;
+        color: #333;
+        margin: 0;
+        font-style: normal;
+}
+.add_to_cart_section button{
+       width: 100%;
+        background: #334155;
+        color: white;
+        border: none;
+        padding: 12px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        height: 8vh;
+}
