@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-    
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="hero">
+  <header class="hero">
+    <h1>All products</h1>
+  </header>
 
-        <h1>All products</h1>
-    </header>
-    <main>
-        <section class="productPannel">
-            <h2>6 products</h2>
+  <main>
+    <section class="productPannel">
+      <h2 id="productPannel_h2"></h2>
 
-            <select name="" id="">
-                <option value=""> Sort By</option>
-                <option value=""> Products: Hi to low</option>
-                <option value="">Products: Low to hi</option>
-            </select>
-        </section>
-        <section id="product_showcase"class="products">
+      <select name="" id="">
+        <option value="">Sort By</option>
+        <option value="">Products: Hi to low</option>
+        <option value="">Products: Low to hi</option>
+      </select>
+    </section>
+     <section class="empty-state">
+  <img src="./assets/emptyBox.png" height="100vh" alt="Empty box illustration" class="empty-image">
+  <h2>Oops... looks like the shelves are empty!</h2>
+  <p>Smash that "Load Products" button to fix this tragic situation.</p>
+  <button class="load-btn">Load Products</button>
+</section>
 
-        </section>
-    </main>
+
+    <section id="product_showcase" class="products"></section>
+
+
+  </main>
 </body>
 </html>

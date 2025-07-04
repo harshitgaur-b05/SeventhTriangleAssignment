@@ -2,7 +2,8 @@
 
 
 (async function () {
-    
+   
+
     
 async function FetchData(){
     const res=await fetch('https://interveiw-mock-api.vercel.app/api/getProducts')
@@ -86,15 +87,13 @@ function buildCard({img,title,price}){
 
     
 }
-const apiData= await FetchData();
-// console.log(apiData);
+    const apiData= await FetchData();
+apiData.forEach(element => {
+    Card(element)
+});
+    const productPanel =document.getElementById('productPannel_h2')
+productPanel.textContent=`${apiData.length+1} Products`
 
-Card(apiData[0]);
-Card(apiData[0]);
-Card(apiData[0]);
-Card(apiData[0]);
-Card(apiData[0]);
-Card(apiData[0]);
 })
 ()
 

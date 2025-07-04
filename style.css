@@ -3,16 +3,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 .hero {
-  /* background: url('your-image.jpg') center/cover no-repeat; */
+  background: url('./assets/ak2.jpg') no-repeat center center ;
     background-color: aqua;
-  height: 300px;
+  height:30vh;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
   height: 40vh;
+  background-size: cover;
 }
 
 .hero h1 {
@@ -50,9 +52,10 @@ select{
    width: 100vw;
     min-height: 217vh;
     /* background: pink; */
-    display: grid;
+    /* display: grid; */
+    display: none;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0vw; /* Increase gap between cards */
+    gap: 1vw; 
     justify-content: center;
     padding: 0vw 5vw;
 
@@ -66,63 +69,101 @@ select{
         padding: 20px;
         font-family: Arial, sans-serif;
         margin: 0% 3%;
-        
+        opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    animation: cardSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: calc(var(--animation-order) * 0.15s);
 }
+
+/* ANIMATION KEYFRAMES - ADDED */
+@keyframes cardSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+.product-card:nth-child(1) { --animation-order: 0; }
+.product-card:nth-child(2) { --animation-order: 1; }
+.product-card:nth-child(3) { --animation-order: 2; }
+.product-card:nth-child(4) { --animation-order: 4; }
+.product-card:nth-child(5) { --animation-order: 5; }
+.product-card:nth-child(6) { --animation-order: 6; }
+.product-card:nth-child(7) { --animation-order:8; }
+.product-card:nth-child(8) { --animation-order: 9; }
+.product-card:nth-child(9) { --animation-order: 10; }
+.product-card:nth-child(10) { --animation-order: 12; }
+.product-card:nth-child(11) { --animation-order: 13; }
+.product-card:nth-child(12) { --animation-order: 14; }
+
 .image-section {
     display: flex;
     gap: 8px;
     margin-bottom: 16px;
     height: 71%;
-   
 }
 
 .image_part {
-       
- object-fit: con;
+    object-fit: con;
     height: 100%;
     width: 100%;
-    
 }
-/*title section */
-.title-section{
-   text-align:start;
-    margin-bottom: 8px;
-   
-}
-.title-section h3 {
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
-      font-family: 'Montserrat', sans-serif;
-    font-size: 4vh;
-        font-weight: 300;
-        color: #333;
-        margin: 0;
-}
-.price-section{
-     text-align: start;
-        margin-bottom: 16px;
-}
-.price-section p{
+
+/* title section */
+.title-section {
     text-align: start;
-         font-size: 1.8rem;
-        padding-top: 1rem;
-         font-family: 'Montserrat', sans-serif;
-         font-weight:700;
-        color: #333;
-        margin: 0;
-        font-style: normal;
+    margin-bottom: 8px;
 }
-.add_to_cart_section button{
-       width: 100%;
-        background: #334155;
-        color: white;
-        border: none;
-        padding: 12px 16px;
-        font-size: 14px;
-        font-weight: 600;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.2s;
-        height: 8vh;
+
+.title-section h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4vh;
+    font-weight: 300;
+    color: #333;
+    margin: 0;
+}
+
+.price-section {
+    text-align: start;
+    margin-bottom: 16px;
+}
+
+.price-section p {
+    text-align: start;
+    font-size: 1.8rem;
+    padding-top: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    font-style: normal;
+}
+
+.add_to_cart_section button {
+    width: 100%;
+    background: #334155;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    height: 8vh;
+}
+
+/* BUTTON HOVER ANIMATION - ADDED */
+.add_to_cart_section button:hover {
+    background: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(51, 65, 85, 0.3);
 }
