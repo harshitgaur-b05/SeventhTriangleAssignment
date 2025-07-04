@@ -109,7 +109,7 @@
                 // Reset to original order if no specific sort is selected
                 sortedData = [...apiData];
             }
-            
+            if(loadCLICK==true)
             renderProducts(sortedData)
         })
     }
@@ -121,14 +121,20 @@
     }
 
     const productPanel = document.getElementById('productPannel_h2')
-    productPanel.textContent = `${apiData.length} Products`
+   
     const emptylp = document.getElementById('empty-space-id')
     const prodSection = document.getElementById('product_showcase')
     const btnld = document.getElementById('load-btn');
-
+     productPanel.textContent = `${apiData.length} Products`
+    let loadCLICK=false;
     btnld.addEventListener('click', (e) => {
         e.preventDefault()
+        loadCLICK=true
         btnld.innerHTML = `<div class="loader"></div>`
+    btnld.style.width = "60px";
+    btnld.style.height = "60px";
+    btnld.style.borderRadius = "50%";
+    btnld.style.padding = "0px";
         setTimeout(() => {
             emptylp.style.display = 'none';
             prodSection.style.display = "grid";
