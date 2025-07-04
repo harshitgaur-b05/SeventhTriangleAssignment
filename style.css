@@ -8,7 +8,7 @@
 .hero {
   background: url('./assets/ak2.jpg') no-repeat center center ;
     background-color: aqua;
-  height:30vh;
+  height:45vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,6 +48,59 @@ select{
   background-color: #fff;
   font-size: 1vw;
 }
+.empty-state{
+    background: pink;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-state h2 {
+    font-size: 2rem;
+    color: #4a5568;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.empty-state p {
+    font-size: 1.125rem;
+    color: #718096;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    line-height: 1.6;
+}
+.load-btn {
+  background: linear-gradient(to right, #0099ff, #66ccff);
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 60px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
 .products{
    width: 100vw;
     min-height: 217vh;
@@ -60,6 +113,7 @@ select{
     padding: 0vw 5vw;
 
 }
+
 .product-card{
         width: 26vw;
         background: white;
